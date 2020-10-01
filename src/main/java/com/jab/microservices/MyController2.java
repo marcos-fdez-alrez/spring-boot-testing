@@ -5,15 +5,29 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+/**
+ * Secondary controller class which receives requests to greeting endpoint.
+ *
+ */
 @Controller
 @RequiredArgsConstructor
 public class MyController2 {
 
-	private final MyService service;
+    /**
+     * Service used 4 greeting.
+     */
+    private final MyService service;
 
-	@RequestMapping("/greeting")
-	public @ResponseBody String greeting() {
-		return service.greet();
-	}
+    /**
+     *
+     * "greeting" endpoint point method.
+     *
+     *  @return - String
+     *
+     */
+    @RequestMapping("/greeting")
+    public @ResponseBody String greeting() {
+        return service.greet();
+    }
 
 }
